@@ -1,0 +1,28 @@
+# This is in beta, as sometimes feh requires you to refresh it
+# For a full working copy, use text+art
+
+while true
+do
+art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
+
+tput civis      -- invisible
+clear
+printf "\e[1;34mNow Playing:  \e[0m"
+cmus-remote -Q | grep "tag title" | sed s/"tag title"/""/g |  sed '1s/^.//'
+
+printf "\e[1;34mTrack Number: \e[0m"
+cmus-remote -Q | grep "tag tracknumber" | sed s/"tag tracknumber"/""/g |  sed '1s/^.//'
+
+printf "\e[1;34mArtist: \e[0m"
+cmus-remote -Q | grep "tag artist" | sed s/"tag artist"/""/g | sed '1s/^.//'
+
+printf "\e[1;34mGenre: \e[0m"
+cmus-remote -Q | grep "genre" | sed s/"genre"/""/g |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//'
+
+printf "\e[1;34mDate: \e[0m"
+cmus-remote -Q | grep "tag date" | sed s/"tag date"/""/g | sed '1s/^.//'
+
+feh -Z -q --cycle-once -g 100x100+1000+30 "$art" | sed s/"feh"/""/g
+
+sleep 10
+done
