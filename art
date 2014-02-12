@@ -1,0 +1,10 @@
+# Displays album art tagged in an .mp3 file
+
+art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
+feh -Z -g 100x100+1000+30 "$art"
+
+
+# Alternatively, create an executable file with ONLY the following, if you want to get the art from a seperate folder
+# The parameter used will display that art (EX, "art loveitloveit")
+# feh -Z -g 100x100+1000+30 /path/to/folder/$1.jpg
+
