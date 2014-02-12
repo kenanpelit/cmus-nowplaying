@@ -1,0 +1,24 @@
+while true
+do
+
+tput civis      -- invisible
+clear
+printf "\e[1;34mNow Playing:  \e[0m"
+cmus-remote -Q | grep "tag title" | sed s/"tag title"/""/g |  sed '1s/^.//'
+
+printf "\e[1;34mTrack Number: \e[0m"
+cmus-remote -Q | grep "tag tracknumber" | sed s/"tag tracknumber"/""/g |  sed '1s/^.//'
+
+printf "\e[1;34mArtist: \e[0m"
+cmus-remote -Q | grep "tag artist" | sed s/"tag artist"/""/g | sed '1s/^.//'
+
+printf "\e[1;34mGenre: \e[0m"
+cmus-remote -Q | grep "genre" | sed s/"genre"/""/g |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//'
+
+printf "\e[1;34mDate: \e[0m"
+cmus-remote -Q | grep "tag date" | sed s/"tag date"/""/g | sed '1s/^.//'
+
+
+sleep 10
+# Change the sleep number depending on how fast you want it to refresh
+done
