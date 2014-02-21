@@ -15,7 +15,7 @@ This displays plain (colored blue and white) information output from cmus.
 
 Full-tagged-beta
 ----------------
-This is Art and Text combined, and does not always work properly. More updates soon.
+This is Art and Text combined, the only issue is that the art does not update between albums. More updates soon.
 
 Large
 -----
