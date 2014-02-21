@@ -1,7 +1,10 @@
-# This is in beta, as sometimes feh requires you to refresh it
+# This is in beta, as album art does not refresh when you change albums (you can just CTRL+C and restart it)
+# Requires the album art to be tagged in the file you are playing
 # For a full working copy, use text+art
 
-while true
+art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
+
+feh -Z -q --cycle-once -g 100x100+1000+30 "$art" | sed s/"feh"/""/g & while true
 do
 art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
 
@@ -22,7 +25,8 @@ cmus-remote -Q | grep "genre" | sed s/"genre"/""/g |  sed '1s/^.//' |  sed '1s/^
 printf "\e[1;34mDate: \e[0m"
 cmus-remote -Q | grep "tag date" | sed s/"tag date"/""/g | sed '1s/^.//'
 
-feh -Z -q --cycle-once -g 100x100+1000+30 "$art" | sed s/"feh"/""/g
+
+
 
 sleep 10
 done
