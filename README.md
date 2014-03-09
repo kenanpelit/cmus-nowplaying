@@ -19,6 +19,11 @@ Full-tagged-beta
 ----------------
 This is Art and Text combined, the only issue is that the art does not update between albums. More updates soon.
 
+Lyrics
+---
+Displays song lyrics (IN A FILE YOU CREATE)
+
 Large
 -----
 Displays Title and Artist with figlet.
+
