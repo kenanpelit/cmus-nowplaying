@@ -1,0 +1,5 @@
+track=$(cmus-remote -Q | grep "tag title" | sed s/"tag title"/""/g |  sed '1s/^.//')
+output=$(echo "$track" | sed 's/ //g')
+clear && echo -n "LYRICS FOR: " && echo -n " $track" && echo -e "\n" && cat /path/to/folder/$output && echo " "
+# Make a folder that you will put the lyrics in. The lyrics files should be named with capitals
+# EXAMPLE: For a song called "Alvin Row", use "AlvinRow". Put the lyrics in that files, obviously
