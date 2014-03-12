@@ -1,0 +1,10 @@
+while true
+do
+tput civis      -- invisible
+clear
+printf "Now Playing: " | toilet --gay -f future
+cmus-remote -Q | grep "tag title" | sed s/"tag title"/""/g | toilet -f future
+printf "By: " | toilet --gay -f future
+cmus-remote -Q | grep "tag artist" | sed s/"tag artist"/""/g | toilet -f future
+sleep 10
+done
