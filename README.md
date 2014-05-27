@@ -27,3 +27,8 @@ Large
 -----
 Displays Title and Artist with figlet.
 
+
+Installing
+------
+Just put it in a folder, type "chmod +x /path/to/script/", and run it. Only cmus is required (and feh, for the art.)
+
