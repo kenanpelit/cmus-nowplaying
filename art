@@ -1,10 +1,14 @@
-# Displays album art tagged in an .mp3 file
+# Displays album art tagged in an .mp3 file, or in a folder. Please set the variables.
 
+MODE=" " # 1=Automatic, 2=Manual
+PATH=" " # Path to art folder, if using mode 2
+
+if [ $MODE == "1" ]
+then
 art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
 feh -Z -g 100x100+1000+30 "$art"
-
-
-# Alternatively, create an executable file with ONLY the following, if you want to get the art from a seperate folder
-# The parameter used will display that art (EX, "art loveitloveit")
-# feh -Z -g 100x100+1000+30 /path/to/folder/$1.jpg
-
+fi
+if [ $MODE == "w" ]
+then
+feh -Z -g 100x100+1000+30 $PATH/$1.jpg
+fi
