@@ -8,7 +8,7 @@ then
 art=$(cmus-remote -Q | grep "file" | sed s/"file"/""/g | sed '1s/^.//')
 feh -Z -g 100x100+1000+30 "$art"
 fi
-if [ $MODE == "w" ]
+if [ $MODE == "2" ]
 then
 feh -Z -g 100x100+1000+30 $PATH/$1.jpg
 fi
