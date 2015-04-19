@@ -1,0 +1,20 @@
+#!/bin/bash
+
+playing(){
+
+cmus-remote -Q | grep "tag title" | sed s/"tag title"/""/g |  sed '1s/^.//'
+
+printf "Track Number: "
+cmus-remote -Q | grep "tag tracknumber" | sed s/"tag tracknumber"/""/g |  sed '1s/^.//'
+
+printf "Artist: "
+cmus-remote -Q | grep "tag artist" | sed s/"tag artist"/""/g | sed '1s/^.//'
+
+printf "Genre: "
+cmus-remote -Q | grep "genre" | sed s/"genre"/""/g |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//' |  sed '1s/^.//'
+
+printf "Date: "
+cmus-remote -Q | grep "tag date" | sed s/"tag date"/""/g | sed '1s/^.//'
+
+}
+notify-send "Now playing: " "$(playing)"
